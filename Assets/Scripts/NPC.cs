@@ -6,6 +6,7 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     private Outline outline;
+    [SerializeField] private DialogoSO dialogo;
     [SerializeField] private float tiempoRotacion;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class NPC : MonoBehaviour
     public void Interactuar(Transform interactuador)
     {
         Debug.Log("Hola1");
-        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y);
+        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(() => SistemaDialogos.sistema.IniciarDialogo());
     }
     private void OnMouseEnter()// cunado pasamos x encima 
     {        
