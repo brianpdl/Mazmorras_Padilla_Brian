@@ -30,12 +30,22 @@ public class SistemaDialogos : MonoBehaviour
     {
         marcos.SetActive(true);
     }
-    private void EscribirFrase()
-    {
-
-    }
+    //private IEnumerator EscribirFrase()
+    //{
+        //textoDialogo.text = "";
+        //char[] fraseEneLetras = dialogoActual.frases[indiceFraseActual].ToCharArray();
+        //foreach (char letra in fraseEneLetras)
+        //{
+            //textoDialogo.text += letra;
+            //yield return new WaitForEndOfFrame(dialogoActual.tiempoEntreLetras);
+        //}
+    //}
 
     private void SiguienteFrase()
+    {
+        Debug.Log("Pasamos a la siguiente frase!");
+    }
+    private void CompletarFrase()
     {
 
     }
@@ -44,4 +54,7 @@ public class SistemaDialogos : MonoBehaviour
     {
 
     }
+
+
+
 }
