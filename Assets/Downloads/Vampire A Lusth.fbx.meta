@@ -8,27 +8,27 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Vampire_diffuse
-    second: {fileID: 2800000, guid: ce79b0ee81368a645916ba017a1a3ecc, type: 3}
+    second: {fileID: 2800000, guid: a5401f0d1184f484cb5b8e5d46a48c76, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Vampire_diffuse_transparent
-    second: {fileID: 2800000, guid: 99db39344acbb0942b6bb9a2b0ab25e0, type: 3}
+    second: {fileID: 2800000, guid: c393f7f7ad762d94a94d6464536a7c92, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Vampire_emission
-    second: {fileID: 2800000, guid: bff97c753224b0d4884f431ccdd5e8c0, type: 3}
+    second: {fileID: 2800000, guid: f3f928b6ef795a24ebf63c612c8c95b5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Vampire_normal
-    second: {fileID: 2800000, guid: 6c0c901a39a435649afaff175acde4d1, type: 3}
+    second: {fileID: 2800000, guid: 0e84804864524374fbb258ab3ff12ea1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Vampire_specular
-    second: {fileID: 2800000, guid: 83a736879d730ab42b614d54ea386c7b, type: 3}
+    second: {fileID: 2800000, guid: 8ad773686d2d2a74ca54e6651dd0db31, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

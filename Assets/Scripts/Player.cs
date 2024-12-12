@@ -21,7 +21,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movimiento();
+        if(Time.timeScale == 1)
+        {
+            Movimiento();
+
+        }
 
         if (npcActual)
         {
@@ -35,7 +39,18 @@ public class Player : MonoBehaviour
             }
 
         }
-       //trazar un raycast desde la camara a la posicion del rayo 
+       //trazar un raycast desde la camara a la posicion del rayo
+       //
+       //if(ultimoClick && ultimoClick.TryGetComponent(out NPC npc))
+        {
+            agent.stoppingDistance = distanciaInteraccion;
+            {
+                //if(!agent.pathPending)
+            }
+        }
+        
+
+        
     }
     private void Movimiento()
     {
