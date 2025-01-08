@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SistemaPatrulla : MonoBehaviour
 {
-
+    [SerializeField] private Enemy main;
     [SerializeField] private Transform ruta;
-    [SerializeField]                                                    
+    [SerializeField] private NavMeshAgent agent;                                            
 
     //private NavMeshAgent agent;
 
@@ -16,6 +17,7 @@ public class SistemaPatrulla : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        main.Patrulla1 = this;
         //agent = GetComponent<NavMeshAgent>;
         foreach (Transform punto in ruta)
         {
@@ -23,13 +25,11 @@ public class SistemaPatrulla : MonoBehaviour
         }
         //CalcularDestino();
     }
-
-    //private IEnumerator PatrullarYEsperar()
-    void Start()
+    private void Start()
     {
+        main.Patrulla1 = this;
         StartCoroutine(PatrullarYEsperar());
     }
-
    
     private IEnumerator PatrullarYEsperar()
     {
@@ -57,9 +57,13 @@ public class SistemaPatrulla : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //1.mirar si lo que entra a mi trigger es el player
-        //2.si es asi, parar todas las corrutinas
-        //3.desactivar este sript
-        //
+        if (other.CompareTag("Player"))
+        {
+            main.ActivaCombate(other.transform);
+            this.enabled = false; //deshabilitar patrulla
+            StopAllCoroutines();//paro corrutinas
+
+        }
     }
+
 }
