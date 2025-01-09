@@ -7,8 +7,8 @@ public class SistemaPatrulla : MonoBehaviour
 {
     [SerializeField] private Enemy main;
     [SerializeField] private Transform ruta;
-    [SerializeField] private NavMeshAgent agent;                                            
-
+    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private float velocidadPatrulla;
     //private NavMeshAgent agent;
 
     List<Vector3> listadoPuntos = new List<Vector3>();
@@ -28,17 +28,25 @@ public class SistemaPatrulla : MonoBehaviour
     private void Start()
     {
         main.Patrulla1 = this;
-        StartCoroutine(PatrullarYEsperar());
     }
-   
+
+    private void OnEnable()
+    {
+        //indiceDestinoActual = -1;
+        agent.speed = velocidadPatrulla;
+        StartCoroutine(PatrullarYEsperar());
+
+        
+    }
+
     private IEnumerator PatrullarYEsperar()
     {
         while (true)
         {
             CalcularDestino(); //1.Calcular el destino 
-            //agent.SetDestiantion(destinoActual); //2.Se te marca el destino
+            agent.SetDestination(destinoActual); //2.Se te marca el destino
 
-            //yield return new WaitUntil( () => !agent.pathPending  && agent.remainingDistance <= 0.2f);
+            yield return new WaitUntil( () => !agent.pathPending  && agent.remainingDistance <= 0.2f);
 
             yield return new WaitForSeconds(Random.Range (0.5f, 1.5f));
         }

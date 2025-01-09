@@ -6,6 +6,9 @@ using UnityEngine.AI;
 public class SistemaCombate : MonoBehaviour
 {
     [SerializeField] private Enemy main;
+    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private float velocidadCombate;
+    [SerializeField] private float distanciaCombate;
 
     
 
@@ -15,16 +18,17 @@ public class SistemaCombate : MonoBehaviour
     }
     private void OnEnable()
     {
-        
+        agent.speed = velocidadCombate;
+        agent.stoppingDistance = distanciaCombate;
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+   
     void Update()
     {
         
+      
+
     }
+
+
+
 }

@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     }
     public void ActivaCombate(Transform transform)
     {
-        mainTarget = target;
+        //mainTarget = target;
         combate.enabled = true;
     }
 
