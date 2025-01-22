@@ -9,6 +9,10 @@ public class Cofre : MonoBehaviour
 
     [SerializeField] private Texture2D cursorInteraccion;
     [SerializeField] private Texture2D cursorPorDefecto;
+
+    public Texture2D CursorPorDefecto { get => cursorPorDefecto; set => cursorPorDefecto = value; }
+    public Texture2D CursorInteraccion { get => cursorInteraccion; set => cursorInteraccion = value; }
+
     private void Awake()
     {
         outline = GetComponent<Outline>();
