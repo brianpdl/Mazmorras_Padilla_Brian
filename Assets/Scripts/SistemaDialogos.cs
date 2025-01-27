@@ -8,6 +8,7 @@ public class SistemaDialogos : MonoBehaviour
     //[SerializeField] private TMP_Text textoDialogo; añadir el tmp texto
     private bool escribiendo;
     private bool indiceEscribiendo;
+    private bool indiceFraseActual;
 
     public static SistemaDialogos sistema;
 
@@ -40,8 +41,11 @@ public class SistemaDialogos : MonoBehaviour
 
     }
 
-    private void TerminarDialogo()
+    private void FinalizarDialogo()
     {
+        Time.timeScale = 1f;
 
+        marcos.SetActive(false);
+        //indiceFraseActual = 0;
     }
 }

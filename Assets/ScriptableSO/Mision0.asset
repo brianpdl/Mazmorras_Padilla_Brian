@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 551a505bb756cbd42a818df0ad92ffa4, type: 3}
-  m_Name: New Dialogo SO
+  m_Script: {fileID: 11500000, guid: 8e39f1eef22b8de44bb2cc89081c6318, type: 3}
+  m_Name: Mision0
   m_EditorClassIdentifier: 
-  frases:
-  - Hi, wassup ma nigga
-  - 'yo, check the D''block, there so many '
-  - 
-  tiempoEntreLetras: 0
+  ordenInicial: Recolecta 3 setas Mortem
+  ordenFinal: Vuelve con Daenerys
+  repetir: 1
+  repeticionesTotales: 3
+  estadoActual: 0
+  indiceMision: 0

@@ -6,23 +6,19 @@ using UnityEngine;
 
 public class DialogoSO : ScriptableObject
 {
-    // para que sea un scriptableObject
+    
 
-    [TextArea(5,10)]
+    [TextArea]
 
     public string[] frases;
+    public AudioClip[] sounds;
     public float tiempoEntreLetras;
 
+    public bool tieneMision;
+
+    public MisionSO mision;
 
 
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
