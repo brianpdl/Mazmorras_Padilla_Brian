@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,9 @@ public class MisionSO : ScriptableObject
     public bool repetir; //si la mision se tiene que repetir, ej: coleccionables (setas)
     public int repeticionesTotales; //para las veces que tienes que repetirlo (ej 5, pues se hacen 5veces)
 
-    public int estadoActual;
+    [NonSerialized] //pa resetear la mision
+    
+    public int estadoActual=0;
 
     public int indiceMision; //un identificador de misiones UNICO.
 }

@@ -6,9 +6,41 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     private Outline outline;
-    [SerializeField] private DialogoSO dialogo;
+
+    [SerializeField] private EventManagerSO eventManager;
+
+    [SerializeField] private MisionSO misionAsociada;
+
+    [SerializeField] private DialogoSO dialogo1;
+
+    [SerializeField] private DialogoSO dialogo2;
+
+    [SerializeField] private Transform puntoCamara;
+
+    [SerializeField] private float lookAtDuration;
+
     [SerializeField] private float tiempoRotacion;
+
+    [SerializeField] private DialogoSO dialogoActual;
+
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        dialogoActual = dialogo1;
+
+
+    }
+
+    private void OnEnable()
+    {
+        eventManager.onTerminarMision += CambiarDialogo;
+    }
+
+    private void CambiarDialogo(MisionSO obj)
+    {
+        //transform.DOLookAt(interactuador.position, lookAtDuration, AxisConstraint.Y) OnComplete(IniciarDialogo);
+    }
     void Start()
     {
         outline = GetComponent<Outline>();
@@ -22,18 +54,11 @@ public class NPC : MonoBehaviour
 
     public void Interactuar(Transform interactuador)
     {
-        Debug.Log("Hola1");
-        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(() => SistemaDialogos.sistema.IniciarDialogo());
-    }
-    private void OnMouseEnter()// cunado pasamos x encima 
-    {        
-        outline.enabled = true;
+        
+        //SStransform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(() => SistemaDialogos.sD.IniciarDialogo
     }
 
-    private void OnMouseExit()//se quita el raton
-    {       
-        outline.enabled = false;
-    }
+    
 
 
 }

@@ -75521,8 +75521,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa71868f9a723f64c843f50e7d70137d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogo: {fileID: 0}
+  eventManager: {fileID: 0}
+  misionAsociada: {fileID: 0}
+  dialogo1: {fileID: 0}
+  dialogo2: {fileID: 0}
+  puntoCamara: {fileID: 0}
+  lookAtDuration: 0
   tiempoRotacion: 1
+  dialogoActual: {fileID: 0}
 --- !u!4 &2073105849
 Transform:
   m_ObjectHideFlags: 0
@@ -84139,6 +84145,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6382460213672328756}
+  - component: {fileID: 6382460213672328759}
+  - component: {fileID: 6382460213672328758}
+  - component: {fileID: 6382460213672328757}
   m_Layer: 0
   m_Name: PC_Nightmare_Mushroom
   m_TagString: Untagged
@@ -84389,6 +84398,59 @@ Transform:
   - {fileID: 1099637076372065505}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6382460213672328757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041821974860194958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b848d819e905aa74fa58302c5f5e7cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventManager: {fileID: 0}
+  misionAsociada: {fileID: 0}
+--- !u!114 &6382460213672328758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041821974860194958}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!65 &6382460213672328759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041821974860194958}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 22.738928, y: 22.699654, z: 22.48265}
+  m_Center: {x: 0.27556717, y: 10.97765, z: 0.4103981}
 --- !u!4 &6386335226214696696
 Transform:
   m_ObjectHideFlags: 0
