@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class NPC : MonoBehaviour
 
     [SerializeField] private MisionSO misionAsociada;
 
+    [SerializeField] private DialogoSO dialogo;
+
     [SerializeField] private DialogoSO dialogo1;
 
     [SerializeField] private DialogoSO dialogo2;
 
-    [SerializeField] private Transform puntoCamara;
+    [SerializeField] private Transform cameraPoint;
 
     [SerializeField] private float lookAtDuration;
 
@@ -29,7 +32,24 @@ public class NPC : MonoBehaviour
     {
         dialogoActual = dialogo1;
 
+        outline = GetComponent< Outline>();
 
+
+    }
+
+    public void Interactuar(Transform interactuador)
+    {
+        //transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(() => SistemaDialogos.sistema.IniciarDialogo(dialogo, cameraPoint));
+    }
+
+    private void OnMouseEnter()
+    {
+        outline.enabled = true;
+    }
+
+    private void OnMouseExit()
+    {
+        outline.enabled = false;
     }
 
     private void OnEnable()
@@ -52,11 +72,11 @@ public class NPC : MonoBehaviour
         
     }
 
-    public void Interactuar(Transform interactuador)
-    {
+    //public void Interactuar(Transform interactuador)
+    //{
         
         //SStransform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(() => SistemaDialogos.sD.IniciarDialogo
-    }
+    //}
 
     
 
