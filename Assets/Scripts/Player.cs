@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private NavMeshAgent agent;
     private Camera cam;
 
+    //Aqui guardo la info del NPC actual con el que voy a hablar.
     private NPC npcActual;
 
     void Start()
@@ -21,31 +22,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.timeScale == 1)
-        {
-            Movimiento();
+        //Trazar un Raycast desde la camara a la posicion del raton 
 
-        }
-
-        if (npcActual)
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        if(Physics.Raycast(ray, out RaycastHit hit) )
         {
-            if(!agent.pathPending && agent .remainingDistance <= agent.stoppingDistance)
+            if (Input.GetMouseButtonDown(0))
             {
-                npcActual.Interactuar(this.transform);
-                npcActual = null;
-                agent.isStopped = true;
-                agent.stoppingDistance = 0;
+                if (hit.transform.TryGetComponent(out NPC npc))
+                {
+                    // en ese caso , ese NPC es el actual 
+                    npcActual = npc;
 
-            }
+                    //ahora la distancia de parada es la interaccion (pararme a X metros del NPC)
+                    agent.stoppingDistance = distanciaInteraccion;
+                }
 
-        }
-       //trazar un raycast desde la camara a la posicion del rayo
-       //
-       //if(ultimoClick && ultimoClick.TryGetComponent(out NPC npc))
-        {
-            agent.stoppingDistance = distanciaInteraccion;
-            {
-                //if(!agent.pathPending)
+                agent.SetDestination(hit.point);
             }
         }
         

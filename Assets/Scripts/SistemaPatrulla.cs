@@ -14,6 +14,7 @@ public class SistemaPatrulla : MonoBehaviour
     List<Vector3> listadoPuntos = new List<Vector3>();
 
     private Vector3 destinoActual; //marca a donde tiene que ir 
+    private int indiceRutaActual = -1;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -25,10 +26,12 @@ public class SistemaPatrulla : MonoBehaviour
         }
         //CalcularDestino();
     }
-    private void Start()
+
+    void Start()
     {
-        main.Patrulla1 = this;
+        StartCoroutine(PatrullarYEsperar());
     }
+
 
     private void OnEnable()
     {
@@ -48,7 +51,8 @@ public class SistemaPatrulla : MonoBehaviour
 
             yield return new WaitUntil( () => !agent.pathPending  && agent.remainingDistance <= 0.2f);
 
-            yield return new WaitForSeconds(Random.Range (0.5f, 1.5f));
+            //3. Esperas a llegar a dicho destino y repites. 
+            yield return new WaitForSeconds(Random.Range (0.5f, 1.5f)); //Esperar hasta que llegue a esa zona
         }
     }
     // Start is called before the first frame update
@@ -56,11 +60,16 @@ public class SistemaPatrulla : MonoBehaviour
     // Update is called once per frame
     private void CalcularDestino()
     {
-        //if(indiceRutaActual >= listadoPuntos.Count)
-        //{
-            //IndiceRutaAcutal = 0;
-        //}
-        //destinoActual = listadoPuntos[IndiceRutaActual];
+        indiceRutaActual++;
+        //Count para las listas: Es lo mismo que Length en los arrays 
+
+        if(indiceRutaActual >= listadoPuntos.Count)
+        {
+            //Si no me quedan puntos, vuelvo al punto 0 
+
+            indiceRutaActual = 0;
+        }
+        destinoActual = listadoPuntos[indiceRutaActual];
     }
 
     private void OnTriggerEnter(Collider other)

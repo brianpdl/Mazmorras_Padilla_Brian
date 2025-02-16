@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Camera cam;
     void Start()
     {
-        
+        cam = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(transform.position);
     }
 }

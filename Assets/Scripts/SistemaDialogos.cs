@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class SistemaDialogos : MonoBehaviour
 {
     [SerializeField] private GameObject marcos;
+    //[SerializeField] private TMP_Text textoDialogo;
     //[SerializeField] private TMP_Text textoDialogo; añadir el tmp texto
     private bool escribiendo;
     private bool indiceEscribiendo;
