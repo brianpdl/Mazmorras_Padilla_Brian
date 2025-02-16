@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class MiniMapa : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform player;
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate() //se suele usar para la actualizacion de la camera
     {
-        
+        Vector3 newPosition = player.position;
+
+        newPosition.y = transform.position.y;
+
+        transform.position = newPosition;
     }
 }
